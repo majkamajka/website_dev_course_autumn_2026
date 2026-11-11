@@ -14,9 +14,22 @@ body {
   text-align: left;
 }
 
-p, ul, label, td, a {
+p,
+ul,
+label,
+td,
+a,
+blockquote {
   color: var(--mainLight);
   font-size: 1em;
+
+  &.small {
+    font-size: 0.8em;
+  }
+}
+
+li {
+  margin-bottom: 8px;
 }
 
 h1 {
@@ -40,6 +53,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  padding: 40px;
 }
 
 .photo-frame {
@@ -59,8 +73,10 @@ table {
   border-collapse: collapse;
   width: 100%;
 
-  tr:nth-child(odd) {
-    background-color: rgba(190, 211, 204, 0.2);
+  tr {
+    &:nth-child(odd) {
+      background-color: rgba(190, 211, 204, 0.2);
+    }
   }
 
   th {
@@ -76,7 +92,6 @@ table {
   }
 }
 
-
 .wrapper {
   background-color: var(--accentDark);
   border-radius: 20px;
@@ -89,6 +104,11 @@ table {
 
   &.form{
     padding-top: 0;
+  }
+
+  &.center {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -110,8 +130,7 @@ form {
   }
 }
 
-input[type="submit"] {
-  background: linear-gradient(90deg, var(--accentPink) 0%, var(--mainLight) 50%, var(--accentGreen) 100%);
+.btn {
   border-radius: 20px;
   border: none;
   color: var(--accentDark);
@@ -119,11 +138,90 @@ input[type="submit"] {
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
   font-weight: bold;
-  margin-top: 20px;
   padding: 10px 20px;
+}
+
+input[type="submit"] {
+  background: linear-gradient(90deg, var(--accentPink) 0%, var(--mainLight) 50%, var(--accentGreen) 100%);
+  margin-top: 20px;
 
   &:hover{
     box-shadow: 0px 0px 8px 2px var(--accentPink);
     transition: 0.2s;
+  }
+}
+
+.hover-btn {
+  background-color: var(--accentPink);
+  margin: 0 auto;
+  transition: background-color 0.9s ease-in-out;
+
+  &:hover {
+    background-color: var(--accentGreen);
+  }
+}
+
+.animation-box {
+  animation: bounce 1s infinite alternate ease-in;
+  background-color: var(--accentGreen);
+  border-radius: 50%;
+  height: 60px;
+  position: relative;
+  width: 60px;
+}
+      
+@keyframes bounce {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 100px;
+  }
+}
+
+.colored-list {
+  color: var(--accentDark);
+
+  li {
+    &:nth-child(odd) {
+      background-color: var(--accentGreen);
+
+      &::marker {
+        color: var(--accentPink)
+      }
+    }
+    
+    &:nth-child(even) {
+      background-color: var(--accentPink);
+
+      &::marker {
+        color: var(--accentGreen)
+      }
+    }
+  }
+}
+
+.filter-img {
+  filter: sepia(100%);
+  max-width: 100%;
+  transition: filter 0.3s ease-out;
+   
+    &:hover {
+      filter: sepia(0%);
+    }
+}
+
+.quote {
+  font-style: italic;
+  font-weight: bold;
+  position: relative;
+
+  &::before {
+    color: var(--accentPink);
+    content: '“';
+    font-size: 40px;
+    left: -40px;
+    position: absolute;
+    top: -10px;
   }
 }
