@@ -1,0 +1,129 @@
+:root {
+    --mainDark:#2b2539;
+    --secondary: #7b6767;
+    --mainLight: #ebe9e4;
+    --accentPink: #efc8c8;
+    --accentGreen: #bed3cc;
+    --accentDark: #1c1825;
+} 
+
+body {
+  background-color: var(--accentDark);
+  font-family: "Courier New", Courier, monospace;
+  padding: 30px 40px;
+  text-align: left;
+}
+
+p, ul, label, td, a {
+  color: var(--mainLight);
+  font-size: 1em;
+}
+
+h1 {
+  color: var(--accentPink);
+}
+
+h2 {
+  color: var(--accentGreen);
+}
+
+
+.content {
+  align-items: center;
+  background-color: var(--mainDark);
+  border-radius: 20px;
+  border-top: 2px solid #362e47; 
+  border-left: 2px solid #362e47; 
+  box-shadow: 10px 10px 6px #131118;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.photo-frame {
+  border-radius: 20px;
+  border: 4px solid var(--secondary);
+  box-shadow: 10px 10px 6px var(--accentDark);
+  display: inline-block;
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  tr:nth-child(odd) {
+    background-color: rgba(190, 211, 204, 0.2);
+  }
+
+  th {
+    background-color: var(--accentGreen);
+    color: var(--accentDark);
+    font-weight: bold;
+  }
+
+  th, td {
+    border: 1px solid var(--accentPink);
+    padding: 8px;
+    text-align: left;
+  }
+}
+
+
+.wrapper {
+  background-color: var(--accentDark);
+  border-radius: 20px;
+  border: 3px solid var(--secondary);
+  box-shadow: 10px 10px 6px var(--accentDark);
+  display: block;
+  margin-bottom: 40px;
+  padding: 20px;
+  width: 400px;
+
+  &.form{
+    padding-top: 0;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-bottom: 4px;
+  }
+
+  input[type="text"] {
+    background-color: var(--accentPink);
+    border-radius: 10px;
+    border: 0px;
+    color: var(--accentDark);
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+}
+
+input[type="submit"] {
+  background: linear-gradient(90deg, var(--accentPink) 0%, var(--mainLight) 50%, var(--accentGreen) 100%);
+  border-radius: 20px;
+  border: none;
+  color: var(--accentDark);
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  &:hover{
+    box-shadow: 0px 0px 8px 2px var(--accentPink);
+    transition: 0.2s;
+  }
+}
